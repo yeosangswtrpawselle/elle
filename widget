@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Notion Greeting Widget</title>
+    <style>
+        body {
+            font-family: serif;
+            color: black;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
+            margin: 0;
+            background: transparent;
+        }
+        #greeting {
+            font-size: 24px;
+        }
+    </style>
+</head>
+<body>
+    <div id="greeting"></div>
+    <script>
+        function getGreeting() {
+            const hour = new Date().getHours();
+            let greeting = "";
+            
+            if (hour >= 4 && hour < 12) {
+                greeting = "good morning, Elle";
+            } else if (hour >= 12 && hour < 18) {
+                greeting = "good afternoon, Elle";
+            } else {
+                greeting = "good evening, Elle";
+            }
+            
+            document.getElementById("greeting").textContent = greeting;
+        }
+        getGreeting();
+    </script>
+</body>
+</html>
